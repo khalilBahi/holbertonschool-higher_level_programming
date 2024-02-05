@@ -22,11 +22,11 @@ def text_indentation(text):
     for ch in text:
         line += ch
         if ch in dlm:
-            print(line.strip()+"\n")
+            print(line.strip())
+            print()
             line = ""
 
     if line:
         print(line.strip())
 
     print(modified_text, end="")
-    
