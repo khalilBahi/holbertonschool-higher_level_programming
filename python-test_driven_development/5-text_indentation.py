@@ -17,16 +17,16 @@ def text_indentation(text):
 
     dlm = [".", "?", ":"]
     modified_text = ""
-
     line = ""
+
     for ch in text:
-        if ch in dlm and line:
-            modified_text += line.rstrip() + ch + "\n\n"
+        line += ch
+        if ch in dlm:
+            print(line.strip()+"\n")
             line = ""
-        else:
-            line += ch
 
     if line:
-        modified_text += line.rstrip()
+        print(line.strip())
 
     print(modified_text, end="")
+    
