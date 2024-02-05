@@ -22,8 +22,7 @@ def text_indentation(text):
     for ch in text:
         line += ch
         if ch in dlm:
-            print(line.strip())
-            print()
+            print(line.strip() + "\n")
             line = ""
 
     if line:
