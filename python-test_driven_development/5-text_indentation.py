@@ -10,7 +10,7 @@ def text_indentation(text):
         Args:
             text (str): The input text to be formatted.
         Raises:
-            TypeError: If the 'text' argument is not a string.
+            TypeError: If the 'text' argument is not a string. jdjfskfqk
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
@@ -21,7 +21,7 @@ def text_indentation(text):
     line = ""
     for ch in text:
         if ch in dlm and line:
-            modified_text += line.rstrip() + ch + " \n\n"
+            modified_text += line.rstrip() + ch + "\n\n"
             line = ""
         else:
             line += ch
