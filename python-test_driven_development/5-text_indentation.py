@@ -16,15 +16,16 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     dlm = [".", "?", ":"]
+    modified_text = ""
     line = ""
 
     for ch in text:
         line += ch
         if ch in dlm:
-            print(line.strip() + "\n")
+            print(line.strip(' ') + "\n")
             line = ""
 
     if line:
-        print(line.strip())
+        print(line.strip(' '))
 
-    print(line, end="")
+    print(modified_text, end="")
