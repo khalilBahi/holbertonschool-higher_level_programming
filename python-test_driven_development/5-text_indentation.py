@@ -15,7 +15,7 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    dlm = ['.', '?', ':']
+    dlm = [".", "?", ":"]
     modified_text = ""
 
     line = ""
@@ -30,4 +30,3 @@ def text_indentation(text):
         modified_text += line.rstrip()
 
     print(modified_text, end="")
-    
