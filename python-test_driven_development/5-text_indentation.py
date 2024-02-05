@@ -27,7 +27,7 @@ def text_indentation(text):
             line += ch
 
     if line:
-        modified_text += line.rstrip() + "\n"
+        modified_text += line.rstrip()
 
     print(modified_text, end="")
     
