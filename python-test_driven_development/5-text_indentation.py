@@ -16,7 +16,6 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     dlm = [".", "?", ":"]
-    modified_text = ""
     line = ""
 
     for ch in text:
@@ -28,4 +27,4 @@ def text_indentation(text):
     if line:
         print(line.strip())
 
-    print(modified_text, end="")
+    print(line, end="")
