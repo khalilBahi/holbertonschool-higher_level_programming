@@ -2,8 +2,9 @@
 """ module rectangle """
 
 
-class Rectangle():
-    """ create new rectangle """
+class Rectangle:
+    """create new rectangle"""
+
     def __init__(self, width=0, height=0):
 
         self.width = width
@@ -40,6 +41,7 @@ class Rectangle():
         if self.__width == 0 or self.__height == 0:
             return 0
         return (self.__width + self.__height) * 2
+
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
