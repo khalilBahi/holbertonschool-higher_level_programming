@@ -1,0 +1,41 @@
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list = MyList()
+>>> my_list.append("aa")
+>>> my_list.append("bb")
+>>> my_list.append("cc")
+>>> my_list.append("dd")
+>>> my_list.append("zz")
+>>> my_list.append("pp")
+>>> my_list.print_sorted()
+['aa', 'bb', 'cc', 'dd', 'pp', 'zz']
+>>> my_list = MyList()
+>>> my_list.append("aa")
+>>> my_list.append(True)
+>>> my_list.append(False)
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instances of 'bool' and 'str'
+>>> my_list = MyList()
+>>> my_list.append(1e548)
+>>> my_list.append(1e694)
+>>> my_list.append(10)
+>>> my_list.append(-710)
+>>> my_list.print_sorted()
+[-710, 10, inf, inf]
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+>>>
