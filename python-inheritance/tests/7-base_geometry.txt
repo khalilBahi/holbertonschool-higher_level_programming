@@ -1,0 +1,41 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> test = BaseGeometry()
+>>> test.integer_validator("int", 105)
+>>> test.integer_validator("float", 153.56)
+Traceback (most recent call last):
+...
+TypeError: float must be an integer
+>>> test.integer_validator("inf", 5e999)
+Traceback (most recent call last):
+...
+TypeError: inf must be an integer
+>>> test.integer_validator("string", "maouia")
+Traceback (most recent call last):
+...
+TypeError: string must be an integer
+>>> test.integer_validator("None", None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+>>> test.integer_validator("zero", 0)
+Traceback (most recent call last):
+...
+ValueError: zero must be greater than 0
+>>> test.integer_validator("negativ int", -542)
+Traceback (most recent call last):
+...
+ValueError: negativ int must be greater than 0
+>>> test.integer_validator("negativ float", -542)
+Traceback (most recent call last):
+...
+ValueError: negativ float must be greater than 0
+>>> test.integer_validator("negativ float", -542.28)
+Traceback (most recent call last):
+...
+TypeError: negativ float must be an integer
+>>> test.integer_validator("bool", True)
+>>> test.integer_validator("bool", False)
+Traceback (most recent call last):
+...
+ValueError: bool must be greater than 0
+>>>
