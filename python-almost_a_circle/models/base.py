@@ -3,6 +3,7 @@
 module Base class
 """
 import json
+from os.path import isfile
 
 
 class Base:
@@ -40,3 +41,12 @@ class Base:
         if json_string is None or json_string == "[]":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Square":
+            dummy = cls(size=3)
+        elif cls.__name__ == "Rectangle":
+            dummy = cls(height=3, width=5)
+        dummy.update(**dictionary)
+        return dummy
