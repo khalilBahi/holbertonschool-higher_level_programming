@@ -105,6 +105,7 @@ class Rectangle(Base):
         )
 
     def update(self, *args):
+        """Update the class Rectangle"""
         count = 0
         for arg in args:
             if count == 0:
