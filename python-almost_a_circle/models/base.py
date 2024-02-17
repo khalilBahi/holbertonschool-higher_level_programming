@@ -3,6 +3,7 @@
 module Base class
 """
 import json
+from os.path import isfile
 
 
 class Base:
@@ -38,3 +39,29 @@ class Base:
             [obj.to_dictionary() for obj in list_objs])
         with open(filename, "w") as f:
             f.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ == "Square":
+            dummy = cls(size=3)
+        elif cls.__name__ == "Rectangle":
+            dummy = cls(height=3, width=5)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        filename = "{}.json".format(cls.__name__)
+        if isfile(filename):
+            with open(filename, "r") as f:
+                json_string = f.read()
+                list = cls.from_json_string(json_string)
+                return [cls.create(**dict_data) for dict_data in list]
+        else:
+            return []
