@@ -8,7 +8,7 @@ import sys
 
 if __name__ == "__main__":
 
-    username, password, database = sys.argv[3]
+    username, password, database = sys.argv[1:4]
 
     db = MySQLdb.connect(
         host="localhost",
