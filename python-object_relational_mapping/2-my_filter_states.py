@@ -23,9 +23,9 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id"\
-        .format(sys.argv[4])
-    cursor.execute(query)
+    c.execute("SELECT * \
+                 FROM states \
+                WHERE BINARY name = '{}'".format(sys.argv[4]))
     rows = cursor.fetchall()
 
     for row in rows:
