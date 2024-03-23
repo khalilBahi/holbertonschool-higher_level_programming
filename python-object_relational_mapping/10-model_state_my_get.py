@@ -9,7 +9,8 @@ from sqlalchemy.orm import Session
 if __name__ == "__main__":
     """connect to the database"""
     connection = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        argv[1], argv[2], argv[3])
+        argv[1], argv[2], argv[3]
+    )
 
     """create the SQLAlchemy engine"""
     engine = create_engine(connection)
@@ -20,6 +21,6 @@ if __name__ == "__main__":
     session = Session(engine)
     result = session.query(State).filter_by(name=argv[4]).first()
     if result is not None:
-            print(result.id)
+        print(result.id)
     else:
-            print("Not found")
+        print("Not found")
