@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-script that takes in an argument and displays all values in the states
-table of hbtn_0e_0_usa where name matches the argument.
+Write a script that takes in an argument and displays all
+values in the states table of hbtn_0e_0_usa where name matches the argument
 """
 
 import MySQLdb
@@ -26,9 +26,9 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id"\
         .format(state)
     cursor.execute(query)
-    results = cursor.fetchall()
+    rows = cursor.fetchall()
 
-    for row in results:
+    for row in rows:
         print(row)
 
     cursor.close()
