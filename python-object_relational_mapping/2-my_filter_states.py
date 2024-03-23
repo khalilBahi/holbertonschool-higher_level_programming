@@ -23,7 +23,7 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    c.execute("SELECT * \
+    cursor.execute("SELECT * \
                  FROM states \
                 WHERE BINARY name = '{}'".format(sys.argv[4]))
     rows = cursor.fetchall()
