@@ -7,6 +7,9 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    """
+    Main function to connect to the MySQL server and fetch states data.
+    """
 
     username, password, database = sys.argv[1:4]
 
