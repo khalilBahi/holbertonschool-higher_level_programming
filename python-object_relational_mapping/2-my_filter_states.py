@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Script that lists all states from the database hbtn_0e_0_usa.
+script that takes in an argument and displays all values in the states
+table of hbtn_0e_0_usa where name matches the argument.
 """
 
 import MySQLdb
@@ -25,7 +26,10 @@ if __name__ == "__main__":
     query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id"\
         .format(state)
     cursor.execute(query)
-    rows = cursor.fetchall()
+    results = cursor.fetchall()
 
-    for row in rows:
-        print(row) 
+    for row in results:
+        print(row)
+
+    cursor.close()
+    db.close()
