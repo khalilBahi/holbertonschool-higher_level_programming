@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Main function to connect to the MySQL server and fetch states data.
     """
 
-    username, password, database, state = sys.argv[1:5]
+    username, password, state, database = sys.argv[1:5]
 
     db = MySQLdb.connect(
         host="localhost",
